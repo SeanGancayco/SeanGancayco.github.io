@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+
+<!-- Sean Gancayco's Website (Simple Template) -->
+<!-- Developed by Timothy Do -->
+<html>
+    <base target="_blank">
+    <head>
+        <title>Sean Gancayco</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" type="image/png" href="images/Sean_Icon.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <style>
+        * { 
+            font-family: monospace;
+        }
+        body {
+            background-image: url(./images/Background.jpg);
+            background-size: 100% auto;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.75em;
+        }
+        audio::-webkit-media-controls-enclosure {
+            border-radius: 0;
+        }
+        li {
+            font-size: 1.5em;
+            margin: 1px 0;
+        }
+        button {
+            font-size: 2em;
+            background-color: silver;
+            opacity: 100%;
+        }
+        button:hover {
+            opacity: 50%;
+            transition: 0.125s;
+        }
+        .content {
+            box-sizing: border-box;
+            background-color: antiquewhite;
+            margin: auto;
+            width: 80%;
+            height: 100%;
+        }
+        .content * { 
+            padding: 0.5em;
+            margin: 0;
+        }
+        .block * {
+            display: inline-block;
+        }
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            column-gap: 0.01em;
+        }
+        .about img {
+            width: 100%;
+        }
+        .additional {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 0.01em;
+        }
+        .icon {
+            font-size: 2em;
+            color: black;
+            opacity: 100%;
+        }
+        .icon:hover {
+            opacity: 50%;
+            transition: 0.125s
+        }
+    </style>
+
+    <body>
+        <div class="content">
+            <div class="block">
+                <h1>Sean Gancayco</h1> 
+                <a href="./media/SeanGancayco_ActingResume.pdf"><button>Resume</button></a>
+            </div>
+            
+            <div class="about">
+                <img src="images/Sean_Transparent.png" alt="Sean"/>
+                <div>
+                    <h2>About Me</h2>
+                    <p>
+                        I’m a Filipino actor and improviser based in Los Angeles, California. 
+                        Whether its animation, video games, commercials, or more, if you need 
+                        an actor who connects to people with charm, wit, and heart let me be 
+                        the voice that speaks for you! Reach out to me personally at<a href="mailto:sean@seangancayco.com">sean@seangancayco.com</a>
+                    </p>
+                    <h2>Character Demo</h2>
+                    <audio controls download>
+						<source src="./media/SeanGancaycoVO.mp3">
+					</audio>
+                </div>
+            </div>
+            <div class="additional">
+                <div>
+                    <h2>Remote Recording</h2>
+                    <li><b>Microphone:</b> Neumann TLM 103</li>
+                    <li><b>Interface:</b> Solid State Logic SSL2</li>
+                    <li><b>Sound Treated Recording Space</b></li>
+                </div>
+                <div>
+                    <h2>Get in Touch</h2>
+                    <a href="https://www.instagram.com/sean_gan_/" class="icon fa fa-instagram"></a></li>
+                    <a href="https://x.com/SeanGancayco" class="icon fa fa-twitter"></a></li>
+                    <a href="mailto:sean@seangancayco.com" class="icon fa fa-envelope"></a></li>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <footer>
+
+    </footer>
+
+</html>
