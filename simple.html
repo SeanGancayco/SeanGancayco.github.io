@@ -4,6 +4,7 @@
 <!-- Developed by Timothy Do -->
 <html>
     <base target="_blank">
+    
     <head>
         <title>Sean Gancayco</title>
 		<meta charset="utf-8" />
@@ -12,19 +13,26 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
+
     <style>
         * { 
             font-family: monospace;
         }
         body {
             background-image: url(./images/Background.jpg);
-            background-size: 100% auto;
+		    background-attachment: fixed, fixed;
+		    background-position: top center,top center;
+		    background-repeat: none, none;
+		    background-size: cover,cover;
         }
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
         }
         h2 {
             font-size: 2em;
+        }
+        h3 {
+           font-size: 1.5em; 
         }
         p {
             font-size: 1.75em;
@@ -37,17 +45,14 @@
             margin: 1px 0;
         }
         button {
-            font-size: 2em;
-            background-color: silver;
+            font-size: 2.75em;
+            background-color: #00B0D0;
             opacity: 100%;
-        }
-        button:hover {
-            opacity: 50%;
-            transition: 0.125s;
+            border: none;
         }
         .content {
             box-sizing: border-box;
-            background-color: antiquewhite;
+            background-color: rgb(238, 220, 211);
             margin: auto;
             width: 80%;
             height: 100%;
@@ -56,30 +61,55 @@
             padding: 0.5em;
             margin: 0;
         }
+        .content button {
+            padding: 0.25em 1.75em;
+        }
         .block * {
-            display: inline-block;
+            display: grid;
+            place-items: center;
         }
         .about {
             display: grid;
             grid-template-columns: 1fr 2fr;
             column-gap: 0.01em;
         }
-        .about img {
+        #pfp {
+            padding: 0em;
             width: 100%;
         }
         .additional {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 0.01em;
+            grid-template-columns: 0.9fr 0.95fr;
+            column-gap: 0.05em;
         }
         .icon {
             font-size: 2em;
             color: black;
             opacity: 100%;
         }
-        .icon:hover {
+        .bluesky {
+            position: relative;
+            top: 1em;
+            width: 2.5em;
+            color: black;
+            opacity: 100%;
+        }
+        button:hover, .bluesky:hover, .icon:hover {
             opacity: 50%;
             transition: 0.125s
+        }
+        #recordButton {
+            display: grid;
+            place-items: center; 
+        }
+        .compact {
+            line-height: 1.1em;
+        }
+        .compact h2 {
+            text-align: left;
+        }
+        #recording, #recording h2 {
+            text-align: center;
         }
     </style>
 
@@ -87,12 +117,17 @@
         <div class="content">
             <div class="block">
                 <h1>Sean Gancayco</h1> 
-                <a href="./media/SeanGancayco_ActingResume.pdf"><button>Resume</button></a>
             </div>
             
             <div class="about">
-                <img src="images/Sean_Transparent.png" alt="Sean"/>
+                <img id="pfp" src="images/Sean.jpg" alt="Sean"/>
                 <div>
+                    <div>
+                        <h2>Character Demo</h2>
+                        <audio controls download>
+                            <source src="./media/SeanGancaycoVO.mp3">
+                        </audio>
+                    </div>   
                     <h2>About Me</h2>
                     <p>
                         I’m a Filipino actor and improviser based in Los Angeles, California. 
@@ -100,32 +135,27 @@
                         an actor who connects to people with charm, wit, and heart let me be 
                         the voice that speaks for you! Reach out to me personally at<a href="mailto:sean@seangancayco.com">sean@seangancayco.com</a>
                     </p>
-                    <h2>Character Demo</h2>
-                    <audio controls download>
-						<source src="./media/SeanGancaycoVO.mp3">
-					</audio>
-                </div>
-            </div>
-            <div class="additional">
-                <div>
-                    <h2>Remote Recording</h2>
-                    <li><b>Microphone:</b> Neumann TLM 103</li>
-                    <li><b>Interface:</b> Solid State Logic SSL2</li>
-                    <li><b>Sound Treated Recording Space</b></li>
-                </div>
-                <div>
-                    <h2>Get in Touch</h2>
-                    <a href="https://www.instagram.com/sean_gan_/" class="icon fa fa-instagram"></a></li>
-                    <a href="https://x.com/SeanGancayco" class="icon fa fa-twitter"></a></li>
-                    <a href="mailto:sean@seangancayco.com" class="icon fa fa-envelope"></a></li>
+                    <div id="recordButton">
+                        <a href="./media/SeanGancayco_ActingResume.pdf"><button id="resumeButton">Resume</button></a>
+                    </div>
+                    <div class="additional">
+                        <div class="compact">
+                            <h2>Remote Recording</h2>
+                            <h3><b>Microphone:</b>Neumann TLM 103 <br></h3>
+                            <h3><b>Interface:</b>Solid State Logic SSL2 <br></h3>
+                            <h3><b>Sound Treated Recording Space</b><br></h3>
+                        </div>
+                        <div class="compact" id="recording">
+                            <h2>Get in Touch</h2>
+                            <h3>Email:<a href="mailto:sean@seangancayco.com">sean@seangancayco.com</a></h3>
+                            <a href="https://www.instagram.com/sean_gan_/" class="icon fa fa-instagram"></a>
+                            <a href="https://x.com/SeanGancayco" class="icon fa fa-twitter"></a>
+                            <a href="https://bsky.app/profile/seangancayco.bsky.social"><img src="media/bluesky-brands-solid.svg" class="bluesky"></img></a>
+                            <a href="mailto:sean@seangancayco.com" class="icon fa fa-envelope"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </body>
-
-    <footer>
-
-    </footer>
-
 </html>
