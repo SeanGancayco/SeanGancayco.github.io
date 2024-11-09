@@ -13,16 +13,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <!--- Redirect to Mobile Site if Browser on a Mobile Device --->
+    <!--- Redirect to Desktop Site if Browser on Desktop Device --->
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         let dev = false;
         if(urlParams.has('mode') && urlParams.get('mode') == 'dev') {
-            dev == true;
+            dev = true;
         }
-        if((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1) && dev == false) {
-            window.location.href = './simplemobile.html';
+        if(!(typeof window.orientation !== "undefined") && !(navigator.userAgent.indexOf('IEMobile') !== -1) && dev == false) {
+            window.location.href = './simple.html';
         }
     </script>
 
@@ -39,21 +39,21 @@
 		    background-position: top center,top center;
 		    background-repeat: none, none;
 		    background-size: cover,cover;
-            line-height: 2em;
+            line-height: 1.5em;
         }
         h1 {
-            font-size: 4em;
+            font-size: 2.5em;
         }
         h2 {
-            font-size: 1.75em;
+            font-size: 1.5em;
             letter-spacing: 0.05em;
 		    text-transform: uppercase;
         }
         h3 {
-           font-size: 1.25em;
+           font-size: 1em;
         }
         p {
-            font-size: 1.25em;
+            font-size: 1em;
         }
         audio::-webkit-media-controls-enclosure {
             border-radius: 0;
@@ -88,10 +88,12 @@
             box-sizing: border-box;
             background-color: rgb(255, 255, 255);
             margin: auto;
-            width: 85%;
+            width: 95%;
             height: 100%;
         }
         .content * { 
+            display:grid;
+            place-items: center; 
             padding: 0.5em;
             margin: 0;
         }
@@ -103,19 +105,22 @@
             place-items: center;
         }
         .about {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
             column-gap: 0.01em;
             line-height: 1.5em;
         }
         #pfp {
-            padding: 0em;
-            width: 100%;
+            padding: 0em, 0em;
+            width: 45%;
         }
         .additional {
             display: grid;
             grid-template-columns: 0.9fr 0.95fr;
             column-gap: 0.05em;
+        }
+        .icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .icon {
             font-size: 2em;
@@ -124,7 +129,6 @@
         }
         .bluesky {
             position: relative;
-            top: .625em;
             width: 1em;
             font-size: 2em;
         }
@@ -156,7 +160,7 @@
         }
         footer {
             position: relative;
-            width: 40%;
+            width: 90%;
             margin: 0 auto;
             text-align: center;   
         }
@@ -175,14 +179,15 @@
         <h1 id="title">Sean Gancayco</h1> 
         <div class="content">
             <div class="about">
+                <div>
+                    <h2 class="header">Character Demo</h2>
+                    <audio controls download>
+                        <source src="./media/SeanGancaycoVO.mp3">
+                    </audio>
+                </div>   
                 <img id="pfp" src="images/Sean.jpg" alt="Sean"/>
                 <div>
-                    <div>
-                        <h2 class="header">Character Demo</h2>
-                        <audio controls download>
-                            <source src="./media/SeanGancaycoVO.mp3">
-                        </audio>
-                    </div>   
+
                     <h2 class="header">About Me</h2>
                     <p>
                         I’m a Filipino actor and improviser based in Los Angeles, California. 
@@ -193,7 +198,6 @@
                     <div id="resumeButtonDiv">
                         <a href="./media/SeanGancayco_ActingResume.pdf"><button id="resumeButton">RESUME</button></a>
                     </div>
-                    <div class="additional">
                         <div class="compact">
                             <h2 class="header">Remote Recording</h2>
                             <p><b>Microphone:</b>Neumann TLM 103 <br></p>
@@ -203,12 +207,13 @@
                         <div class="compact" id="contact">
                             <h2 class="header">Get in Touch</h2>
                             <h3>Email:<a href="mailto:sean@seangancayco.com">sean@seangancayco.com</a></h3>
-                            <a href="https://www.instagram.com/sean_gan_/" class="icon fa fa-instagram"></a>
-                            <a href="https://x.com/SeanGancayco" class="icon fa fa-twitter"></a>
-                            <a href="https://bsky.app/profile/seangancayco.bsky.social"><img src="media/bluesky-brands-solid.svg" class="icon bluesky"></img></a>
-                            <a href="mailto:sean@seangancayco.com" class="icon fa fa-envelope"></a>
+                            <div class='icons'>
+                                <a href="https://www.instagram.com/sean_gan_/" class="icon fa fa-instagram"></a>
+                                <a href="https://x.com/SeanGancayco" class="icon fa fa-twitter"></a>
+                                <a href="https://bsky.app/profile/seangancayco.bsky.social"><img src="media/bluesky-brands-solid.svg" class="icon bluesky"></img></a>
+                                <a href="mailto:sean@seangancayco.com" class="icon fa fa-envelope"></a>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
